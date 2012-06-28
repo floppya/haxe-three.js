@@ -102,11 +102,11 @@ extern class Color {
 // +BEGIN src/core/Edge.js
 @:native("THREE.Edge")
 extern class Edge {
-    public var vertices : Array<Vertex>;
+    public var vertices : Array<Vector3>;
     public var vertexIndices : Array<Int>;
     public var faces : Array<Face3>;
     public var faceIndices : Array<Int>;
-    public function new(v1:Vertex, v2:Vertex, vi1:Int, vi2:Int) : Void;
+    public function new(v1:Vector3, v2:Vector3, vi1:Int, vi2:Int) : Void;
 }
 // +END src/core/Edge.js
 
@@ -172,13 +172,13 @@ extern class Frustum {
 @:native("THREE.Geometry")
 extern class Geometry {
     public var id : Int;
-    public var vertices : Array<Vertex>;
+    public var vertices : Array<Vector3>;
     public var colors : Array<Color>;
     public var materials : Array<Material>;
     public var faces : Array<Face4>;
     public var faceUvs : Array<Array<UV>>;
     public var faceVertexUvs : Array<Array<UV>>;
-    public var morphTargets : Array<{name:String, vertices:Array<Vertex>}>;
+    public var morphTargets : Array<{name:String, vertices:Array<Vector3>}>;
     public var morphColors : Array<Color>;
     public var skinWeights : Array<Vector4>;
     public var skinIndices : Array<Vector4>;
@@ -553,16 +553,6 @@ extern class Vector4 {
     public function lerpSelf(v:Vector4, alpha:Float) : Vector4;
 }
 // +END src/core/Vector4.js
-
-
-// +BEGIN src/core/Vertex.js
-@:native("THREE.Vertex")
-extern class Vertex {
-    public var position : Vector3;
-    public function new(?pos:Vector3) : Void;
-}
-// +END src/core/Vectex.js
-
 
 // +BEGIN src/lights/Light.js
 @:native("THREE.Light")
